@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #0077b6;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  height: 80vh;
+}
+
+#panel-info {
+  width: 30%;
+  overflow-y: auto;
+  padding: 1rem;
+  background: #f1f1f1;
+}
+
+#mpa {
+  flex: 1;
+}
+
+section h2 {
+  margin-top: 1rem;
+}
+
+.tarjeta {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: white;
+  cursor: pointer;
+}
+
+#reportes {
+  padding: 1rem;
+  background: #e9ecef;
+}

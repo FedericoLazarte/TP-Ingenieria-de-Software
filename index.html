@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Turismo</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+</head>
+
+<body>
+  <header>
+    <h1>Portal de Turismo</h1>
+  </header>
+  <main>
+    <aside id="panel-info">
+      <section id="sitios"></section>
+      <section id="eventos"></section>
+      <section id="asistencia"></section>
+    </aside>
+    <div id="mapa"></div>
+  </main>
+  <section id="reportes">
+    <h2>Reportar inconvenientes</h2>
+    <form id="form-reporte">
+      <label for="lugar">Lugar:</label>
+      <input type="text" id="lugar" required>
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" required>
+      <label for="detalle">Detalle:</label>
+      <textarea id="detalle" required></textarea>
+      <label for="nombre">Nombre: (Opcional)</label>
+      <input type="text" id="nombre">
+      <label for="email">Email (Opcional)</label>
+      <input type="email" id="email">
+      <button type="submit">Enviar Reporte</button>
+    </form>
+  </section>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="js/sitios.js"></script>
+  <script src="js/eventos.js"></script>
+  <script src="js/asistencia.js"></script>
+  <script src="js/reportes.js"></script>
+  <script src="actualizacion.js"></script>
+  <script src="js/mapa.js"></script>
+</body>
+
+</html>
