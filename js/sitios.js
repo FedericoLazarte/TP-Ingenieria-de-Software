@@ -9,6 +9,7 @@ function mostrarSitios() {
   listaSitios.forEach(s => {
     let tarjeta = document.createElement('div');
     tarjeta.className = 'tarjeta';
+    tarjeta.setAttribute('data-id', s.id); // Par resltar tarjeta 
     tarjeta.innerHTML = `<h3>${s.nombre}</h3><p>${s.descripcion}</p>`;
     tarjeta.onclick = () => centrarEnMarcador(s.id);
     contenedor.appendChild(tarjeta);

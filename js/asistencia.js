@@ -9,6 +9,7 @@ function mostrarAsistencia() {
   listaAsistencia.forEach(a => {
     let tarjeta = document.createElement('div');
     tarjeta.className = 'tarjeta';
+    tarjeta.setAttribute('data-id', a.id); // pra ver si funciona resaltado
     tarjeta.innerHTML = `<h3>${a.nombre}</h3><p>Horario: ${a.horario}</p>`;
     tarjeta.onclick = () => centrarEnMarcador(a.id);
     contenedor.appendChild(tarjeta);

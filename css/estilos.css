@@ -22,7 +22,7 @@ main {
   background: #f1f1f1;
 }
 
-#mpa {
+#mapa {
   flex: 1;
 }
 
@@ -38,7 +38,82 @@ section h2 {
   cursor: pointer;
 }
 
+.tarjeta.seleccionada {
+  border: 2px solid #0077b6;
+  background: #caf0f8;
+}
+
 #reportes {
   padding: 1rem;
   background: #e9ecef;
+}
+
+#form-reporte {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+#form-reporte h2 {
+  text-align: center;
+  color: #0077b6;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+#form-reporte label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+#form-reporte input,
+#form-reporte textarea {
+  width: 95%;
+  padding: 8px 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+}
+
+#form-reporte textarea {
+  resize: none;
+}
+
+#form-reporte input:focus,
+#form-reporte textarea:focus {
+  border-color: #0077b6;
+  box-shadow: 0 0 5px rgba(0, 119, 182, 0.3);
+  outline: none;
+}
+
+#form-reporte button {
+  margin-top: 18px;
+  width: 100%;
+  padding: 10px;
+  background-color: #0077b6;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#form-reporte button:hover {
+  background-color: #005f87;
+}
+
+#form-reporte input::placeholder,
+#form-reporte textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
 }

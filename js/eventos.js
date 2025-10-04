@@ -9,6 +9,7 @@ function mostrarEventos() {
   listaEventos.forEach(e => {
     let tarjeta = document.createElement('div');
     tarjeta.className = 'tarjeta';
+    tarjeta.setAttribute('data-id', e.id); // para ver si funciona resaltado
     tarjeta.innerHTML = `<h3>${e.nombre}</h3><p>${e.lugar} - ${e.hora}</p>`;
     tarjeta.onclick = () => centrarEnMarcador(e.id);
     contenedor.appendChild(tarjeta);
