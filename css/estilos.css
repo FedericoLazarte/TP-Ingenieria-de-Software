@@ -10,9 +10,49 @@ header {
   text-align: center;
 }
 
+#btn-reporte {
+  background: #ffb703;
+  color: #000;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+#btn-reporte:hover {
+  background: #fb8500;
+}
+
 main {
   display: flex;
-  height: 80vh;
+  flex-direction: column;
+  height: 85vh;
+}
+
+#buscador {
+  background: #f1f1f1;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#buscador input {
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#buscador button {
+  padding: 0.5rem 1rem;
+  background: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 #panel-info {
@@ -22,8 +62,13 @@ main {
   background: #f1f1f1;
 }
 
+.oculto {
+  display: none;
+}
+
 #mapa {
   flex: 1;
+  height: 100%;
 }
 
 section h2 {
@@ -36,6 +81,11 @@ section h2 {
   margin-bottom: 0.5rem;
   background: white;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tarjeta:hover {
+  background: #e7f5ff;
 }
 
 .tarjeta.seleccionada {
@@ -43,9 +93,12 @@ section h2 {
   background: #caf0f8;
 }
 
+/* estilos de reporte */
+
 #reportes {
-  padding: 1rem;
+  padding: 2rem;
   background: #e9ecef;
+  min-height: 100vh;
 }
 
 #form-reporte {
@@ -53,7 +106,7 @@ section h2 {
   background-color: #f9f9f9;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  max-width: 350px;
+  max-width: 400px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
 }
@@ -110,10 +163,4 @@ section h2 {
 
 #form-reporte button:hover {
   background-color: #005f87;
-}
-
-#form-reporte input::placeholder,
-#form-reporte textarea::placeholder {
-  color: #aaa;
-  font-style: italic;
 }

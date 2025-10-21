@@ -4,29 +4,39 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(mapa);
 
-var marcadores = {}
+var marcadores = {};
+
 
 function agregarMarcador(id, coordenadas, texto) {
+  if (!id || !coordenadas) return;
+
+  if (marcadores[id]) {
+    mapa.removeLayer(marcadores[id]);
+    delete marcadores[id];
+  }
+
   let marcador = L.marker(coordenadas).addTo(mapa)
-  .bindPopup(texto);
-  marcador.on('click', () => { 
+    .bindPopup(texto || '');
+
+  marcador.on('click', () => {
     resaltarTarjeta(id);
-//    resaltarMarcador(id);
   });
+
   marcadores[id] = marcador;
 }
+
 
 function centrarEnMarcador(id) {
   let marcador = marcadores[id];
   if (marcador) {
     mapa.setView(marcador.getLatLng(), 15);
     marcador.openPopup();
-    resaltarTarjeta(id); // Agregado para ver si funciona
- //   resaltarMarcador(id);
+    resaltarTarjeta(id);
+  } else {
+    console.warn("centrarEnMarcador: marcador no encontrado ->", id);
   }
 }
 
-// Probando si salta tarjeta 
 function resaltarTarjeta(id) {
   document.querySelectorAll('.tarjeta').forEach(t => t.classList.remove('seleccionada'));
   const tarjeta = document.querySelector(`[data-id='${id}']`);
@@ -36,12 +46,10 @@ function resaltarTarjeta(id) {
   }
 }
 
-/*
-function resaltarMarcador(id) {
-  Object.values(marcadores).forEach(m => m.setIcon(iconoNormal));
-  let marcador = marcadores[id];
-  if (marcador) {
-    marcador.setIcon(iconoSeleccionado);
-  }
+function limpiarMarcadores() {
+  Object.keys(marcadores).forEach(k => {
+    try { mapa.removeLayer(marcadores[k]); } catch (e) { /* ignore */ }
+  });
+  marcadores = {};
 }
-*/
+
