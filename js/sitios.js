@@ -3,13 +3,22 @@ const listaSitios = [
   { id: 'sitio2', nombre: 'Museo de Arte', descripcion: 'Colección de arte local.', coordenadas: [51.51, -0.1] }
 ];
 
-function mostrarSitios() {
+function mostrarSitios(lista = listaSitios) {
   const contenedor = document.getElementById('sitios');
+  contenedor.innerHTML = '';
+
+  if (!lista || lista.length === 0) {
+    contenedor.style.display = 'none';
+    return;
+  }
+
+
+  contenedor.style.display = '';
   contenedor.innerHTML = '<h2>Sitios de Interés</h2>';
-  listaSitios.forEach(s => {
+  lista.forEach(s => {
     let tarjeta = document.createElement('div');
     tarjeta.className = 'tarjeta';
-    tarjeta.setAttribute('data-id', s.id); // Par resltar tarjeta 
+    tarjeta.dataset.id = s.id;
     tarjeta.innerHTML = `<h3>${s.nombre}</h3><p>${s.descripcion}</p>`;
     tarjeta.onclick = () => centrarEnMarcador(s.id);
     contenedor.appendChild(tarjeta);
@@ -17,4 +26,3 @@ function mostrarSitios() {
   });
 }
 
-mostrarSitios();

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Turismo</title>
+  <title>Portal de Turismo</title>
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -12,41 +12,59 @@
 
 <body>
   <header>
-    <h1>Portal de Turismo</h1>
+    <div class="header-container">
+      <div class="logo-section">
+        <img src="img/logo-turismo.png" alt="Secretaría de Turismo" class="logo">
+        <div class="titles">
+          <h1>Secretaría de Turismo</h1>
+          <p class="subtitle">Portal Oficial de Turismo</p>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#" class="nav-link">Inicio</a></li>
+          <li><a href="#" class="nav-link">Destinos</a></li>
+          <li><a href="#" class="nav-link">Eventos</a></li>
+          <li><a href="#" class="nav-link">Alojamiento</a></li>
+          <li><a href="#" class="nav-link">Gastronomía</a></li>
+          <li><a href="#" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button id="btn-reporte" onclick="window.location.href='reportes.html'">
+        <span class="report-icon">⚠️</span>
+        Reportar inconvenientes
+      </button>
+    </div>
   </header>
+
   <main>
-    <aside id="panel-info">
-      <section id="sitios"></section>
-      <section id="eventos"></section>
-      <section id="asistencia"></section>
-    </aside>
-    <div id="mapa"></div>
+    <div id="buscador">
+      <input type="text" id="input-busqueda" placeholder="Buscar sitios, eventos o centros de asistencia...">
+      <button id="btn-buscar">Buscar</button>
+    </div>
+
+    <div id="contenedor-principal">
+      <aside id="panel-info" class="oculto">
+        <button id="btn-cerrar-panel" class="btn-cerrar">×</button>
+        <section id="sitios"></section>
+        <section id="eventos"></section>
+        <section id="asistencia"></section>
+      </aside>
+      <div id="mapa"></div>
+    </div>
   </main>
-  <section id="reportes">
-    <form id="form-reporte">
-      <h2>Reportar inconvenientes</h2>
-      <label for="lugar">Lugar:</label>
-      <input type="text" id="lugar" required>
-      <label for="fecha">Fecha:</label>
-      <input type="date" id="fecha" required>
-      <label for="detalle">Detalle:</label>
-      <textarea id="detalle" required onfocus></textarea>
-      <label for="nombre">Nombre: (Opcional)</label>
-      <input type="text" id="nombre">
-      <label for="email">Email (Opcional)</label>
-      <input type="email" id="email">
-      <button type="submit">Enviar Reporte</button>
-    </form>
-  </section>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
   <script src="js/mapa.js"></script>
   <script src="js/sitios.js"></script>
   <script src="js/eventos.js"></script>
   <script src="js/asistencia.js"></script>
-  <script src="js/reportes.js"></script>
+  <script src="js/buscador.js"></script>
   <script src="js/actualizacion.js"></script>
-
 </body>
 
 </html>
