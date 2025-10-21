@@ -12,10 +12,31 @@
 
 <body>
   <header>
-    <h1>Portal de Turismo</h1>
-    <button id="btn-reporte" onclick="window.location.href='reportes.html'">
-      Reportar inconvenientes
-    </button>
+    <div class="header-container">
+      <div class="logo-section">
+        <img src="img/logo-turismo.png" alt="Secretaría de Turismo" class="logo">
+        <div class="titles">
+          <h1>Secretaría de Turismo</h1>
+          <p class="subtitle">Portal Oficial de Turismo</p>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#" class="nav-link">Inicio</a></li>
+          <li><a href="#" class="nav-link">Destinos</a></li>
+          <li><a href="#" class="nav-link">Eventos</a></li>
+          <li><a href="#" class="nav-link">Alojamiento</a></li>
+          <li><a href="#" class="nav-link">Gastronomía</a></li>
+          <li><a href="#" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button id="btn-reporte" onclick="window.location.href='reportes.html'">
+        <span class="report-icon">⚠️</span>
+        Reportar inconvenientes
+      </button>
+    </div>
   </header>
 
   <main>
@@ -27,15 +48,9 @@
     <div id="contenedor-principal">
       <aside id="panel-info" class="oculto">
         <button id="btn-cerrar-panel" class="btn-cerrar">×</button>
-        <section id="sitios">
-          <h2>Sitios Turísticos</h2>
-        </section>
-        <section id="eventos">
-          <h2>Eventos</h2>
-        </section>
-        <section id="asistencia">
-          <h2>Centros de Asistencia</h2>
-        </section>
+        <section id="sitios"></section>
+        <section id="eventos"></section>
+        <section id="asistencia"></section>
       </aside>
       <div id="mapa"></div>
     </div>

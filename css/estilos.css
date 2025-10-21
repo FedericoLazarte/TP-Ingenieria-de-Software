@@ -1,34 +1,117 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
 }
 
 header {
-  background: #0077b6;
+  background: linear-gradient(135deg, #0077b6 0%, #023e8a 100%);
   color: white;
-  padding: 1rem;
-  text-align: center;
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: 80px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.titles h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #ffb703;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 80%;
 }
 
 #btn-reporte {
-  background: #ffb703;
+  background: linear-gradient(135deg, #ffb703 0%, #fb8500 100%);
   color: #000;
   border: none;
-  padding: 0.6rem 1rem;
+  padding: 0.7rem 1.2rem;
   border-radius: 8px;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
-  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(251, 133, 0, 0.3);
 }
 
 #btn-reporte:hover {
-  background: #fb8500;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(251, 133, 0, 0.4);
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  height: 85vh;
+.report-icon {
+  font-size: 1.1rem;
 }
 
 #buscador {
@@ -55,11 +138,18 @@ main {
   cursor: pointer;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+}
+
 #contenedor-principal {
   display: flex;
   flex: 1;
-  overflow: hidden;
+  height: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 #panel-info {
@@ -104,6 +194,7 @@ main {
 #mapa {
   flex: 1;
   height: 100%;
+  width: 100%;
   transition: all 0.3s ease;
 }
 
