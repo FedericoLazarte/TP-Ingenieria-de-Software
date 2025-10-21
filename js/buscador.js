@@ -107,4 +107,12 @@ btnBuscar.addEventListener('click', () => {
 });
 
 
+document.getElementById('btn-cerrar-panel').addEventListener('click', function() {
+  panelInfo.classList.add('oculto');
+  inputBusqueda.value = '';
 
+  if (typeof limpiarMarcadores === 'function') limpiarMarcadores();
+  if (typeof mostrarSitios === 'function') mostrarSitios(listaSitios || []);
+  if (typeof mostrarEventos === 'function') mostrarEventos(listaEventos || []);
+  if (typeof mostrarAsistencia === 'function') mostrarAsistencia(listaAsistencia || []);
+});

@@ -55,24 +55,70 @@ main {
   cursor: pointer;
 }
 
-#panel-info {
-  width: 30%;
-  overflow-y: auto;
-  padding: 1rem;
-  background: #f1f1f1;
+#contenedor-principal {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
 }
 
-.oculto {
-  display: none;
+#panel-info {
+  width: 0;
+  overflow-y: auto;
+  background: #f1f1f1;
+  transition: width 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#panel-info:not(.oculto) {
+  width: 30%;
+  min-width: 300px;
+  padding: 1rem;
+}
+
+.btn-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-cerrar:hover {
+  background: #ff5252;
 }
 
 #mapa {
   flex: 1;
   height: 100%;
+  transition: all 0.3s ease;
+}
+
+#panel-info:not(.oculto)~#mapa {
+  flex: 0 0 70%;
+}
+
+.oculto {
+  display: none !important;
 }
 
 section h2 {
-  margin-top: 1rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #0077b6;
 }
 
 .tarjeta {
@@ -82,10 +128,13 @@ section h2 {
   background: white;
   cursor: pointer;
   transition: all 0.2s ease;
+  border-radius: 4px;
 }
 
 .tarjeta:hover {
   background: #e7f5ff;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .tarjeta.seleccionada {
@@ -93,8 +142,7 @@ section h2 {
   background: #caf0f8;
 }
 
-/* estilos de reporte */
-
+/* Estilos para la página de reportes */
 #reportes {
   padding: 2rem;
   background: #e9ecef;

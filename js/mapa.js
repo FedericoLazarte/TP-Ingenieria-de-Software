@@ -48,7 +48,11 @@ function resaltarTarjeta(id) {
 
 function limpiarMarcadores() {
   Object.keys(marcadores).forEach(k => {
-    try { mapa.removeLayer(marcadores[k]); } catch (e) { /* ignore */ }
+    try {
+      mapa.removeLayer(marcadores[k]);
+    } catch (e) {
+      console.log(e);
+    }
   });
   marcadores = {};
 }

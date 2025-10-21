@@ -24,12 +24,21 @@
       <button id="btn-buscar">Buscar</button>
     </div>
 
-    <aside id="panel-info" class="oculto">
-      <section id="sitios"></section>
-      <section id="eventos"></section>
-      <section id="asistencia"></section>
-    </aside>
-    <div id="mapa"></div>
+    <div id="contenedor-principal">
+      <aside id="panel-info" class="oculto">
+        <button id="btn-cerrar-panel" class="btn-cerrar">×</button>
+        <section id="sitios">
+          <h2>Sitios Turísticos</h2>
+        </section>
+        <section id="eventos">
+          <h2>Eventos</h2>
+        </section>
+        <section id="asistencia">
+          <h2>Centros de Asistencia</h2>
+        </section>
+      </aside>
+      <div id="mapa"></div>
+    </div>
   </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
