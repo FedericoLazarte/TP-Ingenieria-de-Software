@@ -50,8 +50,10 @@ btnBuscar.addEventListener('click', () => {
   const consultaRaw = inputBusqueda.value || '';
   const consulta = normalizar(consultaRaw);
 
+  // Si la búsqueda está vacía, marcar visualmente el input en lugar de usar alert
   if (!consulta) {
-    alert('Escriba algo para buscar');
+    inputBusqueda.classList.add('input-error');
+    inputBusqueda.focus();
     return;
   }
 
@@ -110,9 +112,17 @@ btnBuscar.addEventListener('click', () => {
 document.getElementById('btn-cerrar-panel').addEventListener('click', function() {
   panelInfo.classList.add('oculto');
   inputBusqueda.value = '';
+  inputBusqueda.classList.remove('input-error');
 
   if (typeof limpiarMarcadores === 'function') limpiarMarcadores();
   if (typeof mostrarSitios === 'function') mostrarSitios(listaSitios || []);
   if (typeof mostrarEventos === 'function') mostrarEventos(listaEventos || []);
   if (typeof mostrarAsistencia === 'function') mostrarAsistencia(listaAsistencia || []);
+});
+
+// Quitar la clase de error cuando el usuario escribe
+inputBusqueda.addEventListener('input', function() {
+  if (this.value && this.value.trim() !== '') {
+    this.classList.remove('input-error');
+  }
 });
