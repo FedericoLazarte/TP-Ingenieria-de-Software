@@ -16,7 +16,7 @@ function detectarCategorias(query) {
 
   const clavesSitios = ['sitio', 'sitios', 'atractivo', 'atractivos', 'lugar', 'lugares'];
   const clavesEventos = ['evento', 'eventos', 'obra', 'teatro', 'cine', 'funcion', 'funciones', 'ciclo'];
-  const clavesAsistencia = ['asistencia', 'asistencias', 'centro', 'centros', 'movil', 'móvil', 'primeros auxilios', 'auxilios', 'salud'];
+  const clavesAsistencia = ['asistencia', 'asistencias', 'centro', 'centros', 'primeros auxilios', 'auxilios', 'salud'];
 
   if (clavesSitios.some(k => q.includes(k))) res.sitios = true;
   if (clavesEventos.some(k => q.includes(k))) res.eventos = true;
@@ -40,7 +40,7 @@ function buscarPorTexto(q) {
 
   const asistencia = (typeof listaAsistencia !== 'undefined') ? listaAsistencia.filter(a => {
     return normalizar(a.nombre).includes(texto) ||
-      (a.horario && normalizar(a.horario).includes(texto));
+      (a.horario && normalizar(a.horario).includes(texto) || normalizar(a.tipo).includes(texto));
   }) : [];
 
   return { sitios, eventos, asistencia };
