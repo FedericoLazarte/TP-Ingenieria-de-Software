@@ -111,6 +111,22 @@ header {
   background: linear-gradient(135deg, #ff9203 0%, #fb3200 100%);
 }
 
+#btn-buscar {
+  background: #00b4d8;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#btn-buscar:hover {
+  background: #0096c7;
+  transform: translateY(-1px);
+}
+
 .report-icon {
   font-size: 1.1rem;
 }
@@ -162,6 +178,7 @@ main {
 
 #contenedor-principal {
   display: flex;
+  justify-content: center;
   flex: 1;
   height: 100%;
   position: relative;
@@ -208,10 +225,14 @@ main {
 }
 
 #mapa {
-  flex: 1;
-  height: 100%;
-  width: 100%;
+  margin-top: 2%;
+  margin-left: 1%;
+  margin-right: 1%;
+  height: 80%;
+  width: 70%;
   transition: all 0.3s ease;
+  border-radius: 3px;
+  border: 2px solid #0077b6;
 }
 
 #panel-info:not(.oculto)~#mapa {
@@ -318,4 +339,21 @@ section h2 {
 
 #form-reporte button:hover {
   background-color: #005f87;
+}
+
+.leaflet-container .leaflet-popup-content-wrapper {
+  border: 2px solid #0077b6 !important; 
+  box-shadow: 0 8px 20px rgba(2, 46, 87, 0.15) !important;
+  background: #ffffff !important;
+  font-size: 16px;
+}
+
+.leaflet-container .leaflet-popup-tip-container .leaflet-popup-tip {
+  background: #0077b6 !important; 
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+.leaflet-container .leaflet-popup-content {
+  color: #012a4a !important;
 }
