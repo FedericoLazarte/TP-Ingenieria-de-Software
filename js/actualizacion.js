@@ -15,8 +15,8 @@ function iniciarActualizacion() {
       console.error(err);
       alert("Se enviará correo a la coordinación: " + err);
       window.location.href = `mailto:coordinacion@turismo.com?subject=Error%20en%20actualización&body=${encodeURIComponent(err)}`;
-    });
-} */
+    }); */
+}
 
 iniciarActualizacion();
 
