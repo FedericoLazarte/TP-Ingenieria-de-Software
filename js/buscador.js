@@ -50,7 +50,6 @@ btnBuscar.addEventListener('click', () => {
   const consultaRaw = inputBusqueda.value || '';
   const consulta = normalizar(consultaRaw);
 
-  // Si la búsqueda está vacía, marcar visualmente el input en lugar de usar alert
   if (!consulta) {
     inputBusqueda.classList.add('input-error');
     inputBusqueda.focus();
@@ -120,7 +119,6 @@ document.getElementById('btn-cerrar-panel').addEventListener('click', function()
   if (typeof mostrarAsistencia === 'function') mostrarAsistencia(listaAsistencia || []);
 });
 
-// Quitar la clase de error cuando el usuario escribe
 inputBusqueda.addEventListener('input', function() {
   if (this.value && this.value.trim() !== '') {
     this.classList.remove('input-error');
